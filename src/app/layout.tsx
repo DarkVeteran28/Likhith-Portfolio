@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { DM_Sans, JetBrains_Mono } from 'next/font/google';
 import '../styles/tailwind.css';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { Analytics } from '@vercel/analytics/next';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -170,6 +171,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <GoogleAnalytics />
         </Suspense>
         {children}
+        <Analytics />
       </body>
     </html>
   );
